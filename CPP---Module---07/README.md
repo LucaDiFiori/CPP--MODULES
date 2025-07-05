@@ -211,7 +211,7 @@ void sort<char>(char arr[], int size)
     // code to implement counting sort
 }
 ```
-- The general template Printer can handle any type.
+- The general template sort can handle any type.
 - The sort<char> specialization provides a custom implementation that is used 
 whenever the Sort template is instantiated with char.
 - **template <>**: When you specialize a template, you don't need to put a parameter inside the 
@@ -241,8 +241,20 @@ public:
         std::cout << "Specialized print for char*: " << value << std::endl;
     }
 };
-```
 
+int main() {
+    // Compiler automatically chooses the generic template
+    Printer<int> intPrinter;
+    intPrinter.print(42);  // Output: "Generic print: 42"
+    
+    // Compiler automatically chooses the specialized version
+    Printer<char*> charPrinter;
+    char str[] = "Hello";
+    charPrinter.print(str);  // Output: "Specialized print for char*: Hello"
+    
+    return 0;
+}
+```
 
 
 
