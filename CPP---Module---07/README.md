@@ -347,7 +347,7 @@ for (int i = 0; i < 5; i++) {
 delete[] arr;  // frees the array
 ```
 
-### "new T[n]" and "new T[n]()"
+### "new T[n]" and "new T[n] ()"
 The difference is about how the allocated elements are initialized.
 
 **new T[n]**
