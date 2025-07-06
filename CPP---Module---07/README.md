@@ -12,6 +12,7 @@ This module is designed to help you understand Templates in CPP.
     - [Class Templates](#class-templates)
     - [Multiple Template Parameters](#multiple-template-parameters)
     - [Template Specialization](#template-specialization)
+- [NEW[] OPERATOR](#new[]_operator)
 ***
 ***
 
@@ -302,3 +303,74 @@ explicitly specified.
 ### Key Points:
 - Full specialization overrides the general template for a specific type.
 - Partial specialization tailors the behavior of the template for certain combinations or forms of template parameters.
+
+***
+***
+# NEW[] OPERATOR
+In C++, the new[] operator is used to dynamically allocate an array of objects on the heap
+
+### Syntax
+```C++
+T* ptr = new T[n]();
+```
+
+**Where:**
+- **T** is the type of the elements.
+- **n** is the number of elements to allocate.
+- **ptr** is a pointer to the first element of the array.
+
+**After this call:**
+- Memory for n objects of type T is allocated.
+- For each element, the default constructor is called (if T is a class).
+- If T is a built-in type (like int), memory is allocated but not initialized (contains garbage values).
+
+### Difference with plain new
+new (without brackets) allocates a single object:
+```C++
+T* ptr = new T;
+```
+new[] allocates an array of objects.
+
+### Deallocation
+To free memory allocated with new[], use:
+```C++
+delete[] ptr;
+```
+
+#### Example
+```C++
+int* arr = new int[5];  // allocates an array of 5 ints (uninitialized)
+for (int i = 0; i < 5; i++) {
+    arr[i] = i * 2;
+}
+// ...
+delete[] arr;  // frees the array
+```
+
+### "new T[n]" and "new T[n]()"
+The difference is about how the allocated elements are initialized.
+
+**new T[n]**
+- Allocates an array of `n` elements of type `T`.
+- If T is a **built-in type** (like int, char), the elements are not initialized (contain garbage values).
+- If T is a **class type**, the default constructor is called for each element.
+
+**new T[n]()**
+- Allocates an array of n elements of type T.
+- The elements are value-initialized:
+    - For built-in types, this means all elements are zero-initialized (e.g., all ints set to 0).
+    - For class types, the default constructor is called (same as above).
+
+#### Example
+```C++
+int* a = new int[5];    // a[i] are uninitialized (garbage)
+int* b = new int[5]();  // b[i] are all 0
+
+class Foo {
+public:
+    Foo() { std::cout << "Foo constructor\n"; }
+};
+
+Foo* f = new Foo[3];    // Foo constructor called 3 times
+Foo* g = new Foo[3]();  // Foo constructor called 3 times (same behavior)
+```
