@@ -352,14 +352,14 @@ The difference is about how the allocated elements are initialized.
 
 **new T[n]**
 - Allocates an array of `n` elements of type `T`.
-- If T is a **built-in type** (like int, char), the elements are not initialized (contain garbage values).
+- If T is a **built-in type** (like int, char), the elements are `not initialized` (contain garbage values).
 - If T is a **class type**, the default constructor is called for each element.
 
-**new T[n]()**
+**new T[n] ()**
 - Allocates an array of n elements of type T.
 - The elements are value-initialized:
-    - For built-in types, this means all elements are zero-initialized (e.g., all ints set to 0).
-    - For class types, the default constructor is called (same as above).
+    - For **built-in types**, this means all elements are `zero-initialized` (e.g., all ints set to 0).
+    - For **class types**, the default constructor is called (same as above).
 
 #### Example
 ```C++
