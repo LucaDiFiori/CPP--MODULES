@@ -5,7 +5,7 @@ This module is designed to help you understand templated containers, iterators, 
 
 # Table of contents
 - [CONTAINERS AND TEMPLATE CONTAINERS](#Containers-and-Template-Containers)
-    - [std::vector<T>](##std::vector<T>)
+    - [std::vector<T>](#stdvectort)
     - [std::list<T>](##std::list<T>)
     - [std::deque<T>](##std::deque<T>)
     - [std::map<K,V>](##std::map<K,V>)
@@ -374,7 +374,7 @@ In many containers (like vector), iterators behave almost exactly like pointers.
 
 But for other containers like list, map, etc., iterators are complex classes that behave like pointers using operator overloading.
 
-# COnst Iterators
+# Const Iterators
 You can make an iterator const so it can read values but not modify them.
 ```C++
 std::vector<int>::const_iterator it;
