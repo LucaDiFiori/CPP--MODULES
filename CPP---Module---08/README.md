@@ -11,12 +11,12 @@ This module is designed to help you understand templated containers, iterators, 
     - [std::map\<K,V\>](#stdmapkv)
     - [std::set\<T\>](#stdsett)
 - [ITERATORS](#iterators)
-    - [Input Iterator](###Input_Iterator)
-    - [Output Iterator](###Output_Iterator)
-    - [Forward Iterator](###Forward_Iterator)
-    - [Bidirectional Iterator](###Bidirectional_Iterator)
-    - [Random Access Iterator](###Random_Access_Iterator)
-    - [Iterators and STL algorithms](##Iterators_and_STL_algorithms)
+    - [Input Iterator](#Input_Iterator)
+    - [Output Iterator](#Output_Iterator)
+    - [Forward Iterator](#Forward_Iterator)
+    - [Bidirectional Iterator](#Bidirectional_Iterator)
+    - [Random Access Iterator](#Random_Access_Iterator)
+    - [Iterators and STL algorithms](#Iterators_and_STL_algorithms)
 - [STL ALGORITHMS IN C++98](#STL-algorithms-in-C++98)
 
 
