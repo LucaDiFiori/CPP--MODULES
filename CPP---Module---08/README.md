@@ -17,6 +17,7 @@ This module is designed to help you understand templated containers, iterators, 
     - [Bidirectional Iterator](###Bidirectional_Iterator)
     - [Random Access Iterator](###Random_Access_Iterator)
     - [Iterators and STL algorithms](##Iterators_and_STL_algorithms)
+- [STL ALGORITHMS IN C++98](#STL-algorithms-in-C++98)
 
 
 ***
@@ -570,3 +571,56 @@ So, if you're using std::sort, you can only use containers with random access it
 | Dereference        | `*it`                       | Get (or set) the element at iterator position |
 | Compare            | `it == v.end()`             | Check if at end of container                  |
 | Index access       | `it[n]`                     | Access nth element ahead (random access only) |
+
+
+***
+***
+
+# STL ALGORITHMS IN C++98
+The STL algorithms in C++98 are a set of pre-defined, generic functions designed to perform common operations on sequences of elements, such as searching, sorting, transforming, and accumulating data. These algorithms operate on ranges defined by pairs of iterators, not directly on containers, which makes them highly flexible and reusable with any container or sequence that supports iterators
+
+## Key Characteristics of STL Algorithms in C++98
+- **Operate on iterator ranges**: Algorithms take two iterators (begin and end) specifying the sequence to work on.
+- **Do not modify container structure**: They modify elements but do not change container size or reallocate memory.
+- **Generic and reusable**: Work with any data type and container supporting iterators.
+
+## How STL Algorithms Work
+- Algorithms rely on iterators to abstract the traversal of elements, so the same algorithm can work with arrays, vectors, lists, or even custom data structures.
+- They separate what operation is done (algorithm) from where the data is stored (container) and how to traverse it (iterator).
+- For example, std::sort requires random-access iterators (like those from vectors or arrays), while std::for_each works with any input iterator.
+
+**Example: Sorting and Searching**
+```C++
+#include <algorithm>
+#include <iostream>
+#include <vector>
+
+int main() {
+    std::vector<int> v = {5, 3, 6, 4, 8, 1, 7, 2};
+
+    // Sort the vector
+    std::sort(v.begin(), v.end());
+
+    // Print sorted vector
+    for (int x : v) std::cout << x << " ";
+    std::cout << std::endl;
+
+    // Binary search for element 4
+    if (std::binary_search(v.begin(), v.end(), 4))
+        std::cout << "4 found\n";
+    else
+        std::cout << "4 not found\n";
+
+    return 0;
+}
+```
+
+## Common STL Algorithms in C++98
+| Algorithm           | Purpose                                                    | Example Usage                          |
+|---------------------|------------------------------------------------------------|--------------------------------------|
+| `std::for_each`     | Applies a function to each element in a range              | `std::for_each(v.begin(), v.end(), func);` |
+| `std::sort`         | Sorts elements in a range (usually uses quicksort internally) | `std::sort(arr, arr + n);` or `std::sort(v.begin(), v.end());` |
+| `std::binary_search`| Searches for an element in a sorted range using binary search | `std::binary_search(v.begin(), v.end(), key);` |
+| `std::accumulate`   | Computes the sum (or other accumulation) of elements in a range | `std::accumulate(v.begin(), v.end(), 0);` |
+| `std::copy`         | Copies elements from one range to another                   | `std::copy(src.begin(), src.end(), dest.begin());` |
+| `std::find`         | Finds the first occurrence of a value in a range            | `std::find(v.begin(), v.end(), value);` |
