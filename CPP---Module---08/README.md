@@ -102,14 +102,14 @@ Output
 30
 ```
 
-## std::list<T>
+## std::list\<T\>
 std::list<T> is a sequence container from the C++ Standard Library that stores elements of type T in a doubly linked list.
 - **Doubly linked list**: Each element points to both its previous and next neighbor.
 - **Efficient insertion/removal**: Very fast at adding or removing elements at beginning, end, or even in the middle.
 - **No random access**: Unlike std::vector, you cannot do myList[3]. You must use iterators to reach a specific element.
 - **Stable iterators**: Adding/removing elements does not invalidate iterators to other elements.
 
-**When to Use std::list<T>?**
+**When to Use std::list\<T\>?**
 Use std::list when:
 - You frequently insert or delete elements in the middle or at the front.
 - You don’t need random access.
@@ -140,7 +140,7 @@ int main() {
 }
 ```
 
-## std::deque<T>
+## std::deque\<T\>
 std::deque<T> stands for double-ended queue. It's a sequence container that allows fast insertion and removal at both the front and the back.
 Unlike std::vector, which allows fast operations only at the back, std::deque supports fast push_front and push_back.
 Internally, it is implemented as a series of chunks or blocks — not a single contiguous array.
