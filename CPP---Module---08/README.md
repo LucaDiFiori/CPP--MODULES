@@ -68,7 +68,7 @@ Here are some standard template containers defined in C++98 STL:
 
 
 
-## std::vector<T>
+## std::vector\<T\>
 `std::vector<T>` is a sequence container from the C++ Standard Library that stores elements of type T in a dynamic array.
 - **Dynamic size**: You can add (push_back) or remove (pop_back) elements at the end.
 - **Contiguous storage**: Elements are stored in contiguous memory, meaning it behaves similarly to a raw array internally.
@@ -149,7 +149,7 @@ Internally, it is implemented as a series of chunks or blocks — not a single c
 - **Automatic resizing**: Like vector, it grows as needed.
 - **No invalidation of front insertions**: Unlike vector, inserting at the front won’t cause all elements to shift.
 
-**When to Use std::deque<T>?**
+**When to Use std::deque\<T\>?**
 Use std::deque when:
 - You need to push or pop from both ends.
 - You want random access like in a vector.
@@ -187,7 +187,7 @@ Output
 30
 ```
 
-## std::map<K, V>
+## std::map\<K, V\>
 std::map<K, V> is a sorted associative container in the C++ Standard Library that stores key-value pairs.
 - **Unique keys**: Each key `K` is unique, and is mapped to a value `V`. This means You can't insert two elements with the same key.
 - **Internally**, it’s implemented as a balanced binary search tree (usually a red-black tree).
@@ -271,7 +271,7 @@ std::map<K, V> is a sorted associative container in the C++ Standard Library tha
 - `erase(key)` – removes an element by key.
 - `begin() / end()` – for iterating.
 
-**When to Use std::map<K, V>?**
+**When to Use std::map\<K, V\>?**
 Use std::map when:
 - You need elements to be sorted by key.
 - You need logarithmic performance.
@@ -309,7 +309,7 @@ Bob: 25
 Charlie: 35
 ```
 
-## std::set<T>
+## std::set\<T\>
 std::set<T> is an **associative container** that stores **unique values of type T** in **sorted** order.
 - **Sorted**: It automatically keeps the elements sorted (by default using <).
 - **Unique values only**:It does not allow duplicates — inserting a value that already exists does nothing.
@@ -317,7 +317,7 @@ std::set<T> is an **associative container** that stores **unique values of type 
 - **Safe iterators**: Inserting/removing elements does not invalidate other iterators (except the erased one).
 - **No random access**: You can't do mySet[2] like in a vector.
 
-**When to Use std::set<T>**
+**When to Use std::set\<T\>**
 Use std::set when:
 - You want to store unique elements only.
 - You need elements to be automatically sorted.
