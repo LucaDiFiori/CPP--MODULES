@@ -4,20 +4,20 @@ This module is designed to help you understand templated containers, iterators, 
 
 
 # Table of contents
-- [CONTAINERS AND TEMPLATE CONTAINERS](#Containers-and-Template-Containers)
-    - [std::vector<T>](##std::vector<T>)
-    - [std::list<T>](##std::list<T>)
-    - [std::deque<T>](##std::deque<T>)
-    - [std::map<K,V>](##std::map<K,V>)
-    - [std::set<T>](##std::set<T>)
+- [CONTAINERS AND TEMPLATE CONTAINERS](#containers-and-template-containers)
+    - [std::vector<T>](#stdvectort)
+    - [std::list<T>](#stdlistt)
+    - [std::deque<T>](#stddequet)
+    - [std::map<K,V>](#stdmapkv)
+    - [std::set<T>](#stdsett)
 - [ITERATORS](#iterators)
-    - [Input Iterator](###Input_Iterator)
-    - [Output Iterator](###Output_Iterator)
-    - [Forward Iterator](###Forward_Iterator)
-    - [Bidirectional Iterator](###Bidirectional_Iterator)
-    - [Random Access Iterator](###Random_Access_Iterator)
-    - [Iterators and STL algorithms](##Iterators_and_STL_algorithms)
-- [STL ALGORITHMS IN C++98](#STL-algorithms-in-C++98)
+    - [Input Iterator](#input-iterator)
+    - [Output Iterator](#output-iterator)
+    - [Forward Iterator](#forward-iterator)
+    - [Bidirectional Iterator](#bidirectional-iterator)
+    - [Random Access Iterator](#random-access-iterator)
+    - [Iterators and STL algorithms](#iterators-and-stl-algorithms)
+- [STL ALGORITHMS IN C++98](#stl-algorithms-in-c98)
 
 
 ***
