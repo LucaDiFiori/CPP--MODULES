@@ -5,11 +5,11 @@ This module is designed to help you understand templated containers, iterators, 
 
 # Table of contents
 - [CONTAINERS AND TEMPLATE CONTAINERS](#Containers-and-Template-Containers)
-    - [std::vector<T>](#stdvectort)
-    - [std::list<T>](##std::list<T>)
-    - [std::deque<T>](##std::deque<T>)
-    - [std::map<K,V>](##std::map<K,V>)
-    - [std::set<T>](##std::set<T>)
+    - [std::vector\<T\>](#stdvectort)
+    - [std::list\<T\>](#stdlistt)
+    - [std::deque\<T\>](#stddequet)
+    - [std::map\<K,V\>](#stdmapkv)
+    - [std::set\<T\>](#stdsett)
 - [ITERATORS](#iterators)
     - [Input Iterator](###Input_Iterator)
     - [Output Iterator](###Output_Iterator)
