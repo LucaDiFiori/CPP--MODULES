@@ -109,7 +109,7 @@ std::list<T> is a sequence container from the C++ Standard Library that stores e
 - **No random access**: Unlike std::vector, you cannot do myList[3]. You must use iterators to reach a specific element.
 - **Stable iterators**: Adding/removing elements does not invalidate iterators to other elements.
 
-**When to Use std::list\<T\>?**
+**When to Use std::list\<T\>?**<br>
 Use std::list when:
 - You frequently insert or delete elements in the middle or at the front.
 - You don’t need random access.
@@ -149,7 +149,7 @@ Internally, it is implemented as a series of chunks or blocks — not a single c
 - **Automatic resizing**: Like vector, it grows as needed.
 - **No invalidation of front insertions**: Unlike vector, inserting at the front won’t cause all elements to shift.
 
-**When to Use std::deque\<T\>?**
+**When to Use std::deque\<T\>?**<br>
 Use std::deque when:
 - You need to push or pop from both ends.
 - You want random access like in a vector.
@@ -271,7 +271,7 @@ std::map<K, V> is a sorted associative container in the C++ Standard Library tha
 - `erase(key)` – removes an element by key.
 - `begin() / end()` – for iterating.
 
-**When to Use std::map\<K, V\>?**
+**When to Use std::map\<K, V\>?**<br>
 Use std::map when:
 - You need elements to be sorted by key.
 - You need logarithmic performance.
@@ -317,7 +317,7 @@ std::set<T> is an **associative container** that stores **unique values of type 
 - **Safe iterators**: Inserting/removing elements does not invalidate other iterators (except the erased one).
 - **No random access**: You can't do mySet[2] like in a vector.
 
-**When to Use std::set\<T\>**
+**When to Use std::set\<T\>**<br>
 Use std::set when:
 - You want to store unique elements only.
 - You need elements to be automatically sorted.
