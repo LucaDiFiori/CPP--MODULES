@@ -13,6 +13,7 @@ This module is designed to help you understand templated containers, iterators, 
     - [std::deque<T>](#stddequet)
     - [std::map<K, V>](#stdmapk-v)
     - [std::set<T>](#stdsett)
+    - [std::stack<T>](#stdstack)
 - [ITERATORS](#iterators)
     - [Iterator vs Pointer](#iterator-vs-pointer)
     - [Const Iterators](#const-iterators)
@@ -367,7 +368,62 @@ Output
 ```
 
 
+## std::stack \<T\>
+std::stack in C++98 is a **container adaptor** provided by the Standard Template Library (STL) that gives you the functionality of a classic **stack data structure**. A stack operates on the **Last-In, First-Out** (LIFO) principle: the most recently added element is the first to be removed
+It is not a container itself, but uses another container (like **std::deque** or **std::vector**) to store its elements.
+
+The generic signature for std::stack in C++98, as declared in the STL and specified in the standard, is:
+```c++
+template <class T, class Container = deque<T> >
+class stack;
+```
+- `T`: Type of the elements stored in the stack.
+- `Container`: The type of the underlying container to use for storage.
+
+This defaults to std::deque<T> if not explicitly specified, but it can also be any other standard-compatible sequence container such as std::vector<T> or std::list<T>
+
+
+**Key Features**<br>
+- **LIFO Order**: Elements are added and removed from only one end, called the top of the stack.
+- **No Direct Access**: You cannot access elements by index or iterator; only the top element is accessible.
+- **Underlying Container**: By default, std::stack **uses std::deque** as its underlying container, but you can specify std::vector or std::list if desired.
+- **Header File**: Defined in the <stack> header.
+
+
+**Basic OPeration (Using the default container deque)**<br>
+| Operation | Description                            | Example         |
+|-----------|----------------------------------------|-----------------|
+| `push(x)` | Adds element `x` to the top of the stack | `st.push(10);`  |
+| `pop()`   | Removes the top element from the stack | `st.pop();`     |
+| `top()`   | Returns a reference to the top element | `int x = st.top();` |
+| `empty()` | Checks whether the stack is empty      | `st.empty()`    |
+| `size()`  | Returns the number of elements in the stack | `st.size()`     |
+
+
+**Example**<br>
+```C++
+#include <iostream>
+#include <stack>
+using namespace std;
+
+int main() {
+    stack<int> st;
+    st.push(1);
+    st.push(2);
+    st.push(3);
+
+    while (!st.empty()) {
+        cout << st.top() << " ";
+        st.pop();
+    }
+    return 0;
+}
+// Output: 3 2 1
+```
+
+
 ***
+
 
 
 # ITERATORS
