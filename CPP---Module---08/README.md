@@ -382,6 +382,14 @@ class stack;
 
 This defaults to std::deque<T> if not explicitly specified, but it can also be any other standard-compatible sequence container such as std::vector<T> or std::list<T>
 
+For example:
+```C++
+std::stack<int> s;
+
+// Internally, this is equivalent to:
+std::stack<int, std::deque<int> > s;
+```
+
 
 **Key Features**<br>
 - **LIFO Order**: Elements are added and removed from only one end, called the top of the stack.
@@ -420,6 +428,13 @@ int main() {
 }
 // Output: 3 2 1
 ```
+In this example, integers 1, 2, and 3 are pushed to the stack. When you use pop() in a loop, they come out in reverse order (LIFO)
+
+**Important Details**<br>
+- **No Iterators**: You cannot directly iterate through a stack (std::stack does not provide iterators or direct element access).
+- **Copy and Assignment**: You can copy stacks or assign one to another, which also copies contents.
+- **Underlying Container Flexibility**: The default container (std::deque) can be replaced, but the stack interface only allows operations compatible with stack usage.
+- **Type Restrictions**: std::stack can store built-in as well as user-defined types.
 
 
 ***
